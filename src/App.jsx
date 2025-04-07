@@ -63,7 +63,12 @@ const handleChange = (event) =>{
         >Click Here</button>
 
 {data && (
-          <div style={{ marginTop: "20px", marginLeft:"50px"}}>
+          <div 
+          style={{
+            display:"flex", 
+            justifyContent:"center",
+            marginTop:"5%"
+          }}>
             <img src={data} alt="QR Code" />
           </div>
         )}
