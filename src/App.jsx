@@ -13,14 +13,15 @@ const handleChange = (event) =>{
   if (text.trim()===""){
     alert("Please enter text to generate a QR code!");
     return;
+
   }
 
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
     text
-  )}`;
+)}`;
 
   setData(qrUrl);
-  // alert(data);
+  setText("");
 }
 
 
@@ -43,6 +44,7 @@ const handleChange = (event) =>{
         type="text"
         placeholder="Enter text..."
         onChange = {handleChange}
+        value={text}
         style={{
           padding:"10px",
           border:"1px solid gray",
@@ -70,6 +72,7 @@ const handleChange = (event) =>{
             marginTop:"5%"
           }}>
             <img src={data} alt="QR Code" />
+            
           </div>
         )}
         
